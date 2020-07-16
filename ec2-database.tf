@@ -1,3 +1,4 @@
+
 resource "aws_key_pair" "keypair1" {
   key_name   = "${var.stack}-keypairs"
   public_key = "${file("${var.ssh_key}")}"
@@ -95,7 +96,7 @@ resource "aws_instance" "ec2" {
     connection {
       type        = "ssh"
       user        = "ubuntu"
-      #host = self.public_ip
+      host = self.public_ip
       private_key = "${file("~/.ssh/id_rsa")}"
     }
   }
@@ -118,5 +119,5 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 
-  owners = ["099720109477"] # Canonical
+  owners = ["099720109477"] # Canonical 626156903382
 }
