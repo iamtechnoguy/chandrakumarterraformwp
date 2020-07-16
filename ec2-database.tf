@@ -1,11 +1,9 @@
-
 resource "aws_key_pair" "keypair1" {
   key_name   = "${var.stack}-keypairs"
-  public_key = "{file("${var.ssh_key}")}"
+  public_key = "${file("${var.ssh_key}")}"
 }
-
 data "template_file" "phpconfig" {
-  template = "${files("conf.wp-config.php")}"
+  template = "${file("conf.wp-config.php")}"
 
   vars = {
     db_port = "${aws_db_instance.mysql.port}"
@@ -98,7 +96,7 @@ resource "aws_instance" "ec2" {
       type        = "ssh"
       user        = "ubuntu"
       #host = self.public_ip
-      private_key = "{file("~/.ssh/id_rsa")}"
+      private_key = "${file("~/.ssh/id_rsa")}"
     }
   }
 

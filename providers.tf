@@ -1,5 +1,5 @@
 provider "aws" {
-  region = var.aws_reg
+  region = "${var.aws_reg}"
   version = "~> 2.0"
   profile = "terraform"
 }
