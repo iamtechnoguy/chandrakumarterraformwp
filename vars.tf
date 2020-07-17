@@ -1,8 +1,6 @@
 variable aws_reg {
   description = "This is aws region"
   default     = "ap-southeast-1"
-  #access_key = "AKIAJIVV53NJKTXLTUQQ"
-  #secret_key = "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"
   type        = string
 }
 
