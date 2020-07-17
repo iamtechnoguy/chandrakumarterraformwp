@@ -8,19 +8,22 @@ variable aws_reg {
 
 variable stack {
   description = "this is name for tags"
-  default     = "terraform"
+  default     = "chandra-test"
 }
 
 variable username {
-  description = "DB username"
+  description = "Enter your username"
+  
 }
 
 variable password {
-  description = "DB password"
+  description = "Enter your password min8 char"
+  
 }
 
 variable dbname {
-  description = "db name"
+  description = "Enter your DB Name"
+  
 }
 
 variable ssh_key {
